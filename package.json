@@ -4,30 +4,26 @@
   "description": "After doing my masters in Maths, then becoming a web developer, I wanted to combine my skills to create solutions to the problems I solved during my degree using the new programming skills I have aquired.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "react-scripts start",
-    "build-css": "node-sass --include-path scss src/scss/index.scss   src/index.css"    
+    "build-css": "node-sass --include-path scss src/scss/index.scss   src/index.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jennie-quinton/maths_problems.git"
   },
-  "keywords": [
-    "maths",
-    "logic"
-  ],
   "author": "Jennifer Quinton",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jennie-quinton/maths_problems/issues"
-  },
   "homepage": "https://github.com/jennie-quinton/maths_problems#readme",
   "dependencies": {
-    "node-sass": "^4.8.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.8.3",
+    "nodemon": "^1.17.2"
   }
 }
