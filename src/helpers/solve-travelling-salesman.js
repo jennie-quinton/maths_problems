@@ -1,24 +1,36 @@
+/**
+ * Checks to see if you are at a dead end of if you have further nodes you can visit.
+ * 
+ * @param {array} row 
+ * @returns {boolean} 
+ */
 function noOptionsAvailable(row){
-    let done = true;
+    let deadEnd = true;
 
     row.forEach(cell => {
         if (cell !== 0){
-            done=false;
+            deadEnd = false;
         }
     })
 
-    return done;
+    return deadEnd;
 }
 
+/**
+ * For given array of nodes and function creating matrix of variables, it displays the shortest path
+ * 
+ * @param {array} nodes 
+ * @param {function} startMatrix 
+ */
 export function shortestPath(nodes, startMatrix){
     let shortestPath = [],
-        shortestDistance;
+        shortestDistance,
+        matrix   = startMatrix(),
+        order    = [],
+        distance = 0;
 
     nodes.forEach((node, index)=>{
-        let matrix       = startMatrix();
-        let order    = [],
-            distance = 0;
-
+        /* initial distance is 0 as we haven't gone anywhere yet */
         addOption(0, index);
         addNextNode(0, index);
 
@@ -72,6 +84,7 @@ export function shortestPath(nodes, startMatrix){
 
     });
 
+    /* display result */
     document.getElementById('result').innerHTML   = shortestPath;
     document.getElementById('distance').innerHTML = shortestDistance;
 }
