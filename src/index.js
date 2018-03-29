@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {TravellingSalesman} from './components/travelling-salesman';
-import {Header} from './components/core/header';
+import {Header, Footer} from './components/core/index';
 import './index.css';
  
 class Body extends Component{
@@ -10,6 +10,7 @@ class Body extends Component{
             <div id="page">
                 <Header />
                 <TravellingSalesman />
+                <Footer />
             </div>
         );
     }

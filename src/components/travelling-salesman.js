@@ -23,10 +23,10 @@ export class TravellingSalesman extends Component{
 
     render(){
         return (
-            <div id="travel-salesman" class="container">
+            <div id="travel-salesman" className="container">
                 <h1>Travelling Salesman Problem</h1>
                 <p>Finding the shortest path visting every node only once. (Not needing to return to the original node).</p>
-                <img src="http://www.scielo.org.za/img/revistas/sajems/v16n1/05f08.jpg"/>
+                <img src="http://www.scielo.org.za/img/revistas/sajems/v16n1/05f08.jpg" alt="problem to solve"/>
                 <p> Path: <span id="result"></span></p>
                 <p> Distance: <span id="distance"></span></p>
             </div>

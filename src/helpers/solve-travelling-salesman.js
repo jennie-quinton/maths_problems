@@ -33,7 +33,7 @@ export function shortestPath(nodes, startMatrix){
             } else {
                 /* for each node linked add and check the next node */
                 matrix[index].forEach((option, index)=>{
-                    if (option != 0){
+                    if (option !== 0){
                         addOption(option, index);
                         addNextNode(option, index);
                     } 
@@ -65,7 +65,7 @@ export function shortestPath(nodes, startMatrix){
 
         /* update shortest path */
         function updateShortest(order, distance) {
-            if (order.length === matrix.length && (shortestDistance == undefined || distance < shortestDistance)){
+            if (order.length === matrix.length && (shortestDistance === undefined || distance < shortestDistance)){
                 shortestPath     = [...order];
                 shortestDistance = distance;
             }
