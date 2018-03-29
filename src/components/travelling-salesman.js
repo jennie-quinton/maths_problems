@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {shortestPath} from './solve-travelling-salesman';
+import {shortestPath} from '../helpers/solve-travelling-salesman';
 
 export class TravellingSalesman extends Component{
     componentDidMount(){
