@@ -43,10 +43,6 @@ export function shortestPath(nodes, startMatrix){
             }
         } 
 
-        function addNode(option, index){
-            addOption(option, index).then(()=> addNextNode(option, index));
-        }
-
         /* add to current path and distance */
         function addOption(option, index) {
             matrix.forEach(row => row[index] = 0);
@@ -54,6 +50,7 @@ export function shortestPath(nodes, startMatrix){
             distance += option;
         }
 
+        /* return to previous node to try different paths */
         function goBackNode(option, index) {
             /* add back last row to matrix */
             var orig = startMatrix();
