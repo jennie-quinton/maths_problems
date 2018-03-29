@@ -11,12 +11,11 @@ function noOptionsAvailable(row){
 }
 
 export function shortestPath(nodes, startMatrix){
-    let matrix = startMatrix();
     let shortestPath = [],
         shortestDistance;
 
     nodes.forEach((node, index)=>{
-        matrix       = startMatrix();
+        let matrix       = startMatrix();
         let order    = [],
             distance = 0;
 

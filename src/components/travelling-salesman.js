@@ -4,7 +4,7 @@ import {shortestPath} from '../helpers/solve-travelling-salesman';
 export class TravellingSalesman extends Component{
     componentDidMount(){
         const nodes = ["1","2","3","4","5","6","7","8"];
-    
+        
         const startMatrix = () =>   { 
             return [
                 [0,  3,  2,  5,  0,  0,  0,  0],
