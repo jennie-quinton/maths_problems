@@ -21,6 +21,7 @@ function noOptionsAvailable(row){
  * 
  * @param {array} nodes 
  * @param {function} startMatrix 
+ * @returns {array}
  */
 export function shortestPath(nodes, startMatrix){
     let shortestPath = [],
@@ -84,9 +85,7 @@ export function shortestPath(nodes, startMatrix){
 
     });
 
-    /* display result */
-    document.getElementById('result').innerHTML   = shortestPath;
-    document.getElementById('distance').innerHTML = shortestDistance;
+    return {path : shortestPath.join(', '), distance : shortestDistance};
 }
 
 
