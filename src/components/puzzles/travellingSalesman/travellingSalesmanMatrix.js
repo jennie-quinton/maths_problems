@@ -10,6 +10,7 @@ export class TravellingSalesmanMatrix extends Component{
                     row = {this.props.row}
                     key = {`cell ${i}`}
                     handleMatrixChange = {this.props.handleMatrixChange}
+                    currentRow = {this.props.currentMatrix[this.props.row]}
                 />
             );
         }
@@ -25,19 +26,6 @@ export class TravellingSalesmanMatrix extends Component{
 
 class TravellingSalesmanMatrixCell extends Component{
     render(){
-        // let input = <input 
-        //     type = "text" 
-        //     data-cell = {this.props.cell} 
-        //     data-row = {this.props.row}
-        //     onChange = {this.props.handleMatrixChange}
-        //     disabled = {this.props.cell === this.props.row}
-        // />;
-
-        // if(this.props.cell === this.props.row){
-        //     input.value = 0;
-        //     input.disabled = true;
-        // }
-        
         return (
             <td>
                 <input 
@@ -45,6 +33,7 @@ class TravellingSalesmanMatrixCell extends Component{
                     data-cell = {this.props.cell} 
                     data-row = {this.props.row}
                     onChange = {this.props.handleMatrixChange}
+                    value = {this.props.currentRow[this.props.cell]}
                     disabled = {this.props.cell === this.props.row}
                 />
             </td>

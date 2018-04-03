@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { shortestPath } from '../helpers/travelling-salesman';
+import { shortestPath } from '../../../helpers/travelling-salesman';
 import { TravellingSalesmanRender } from './travellingSalesmanRender';
 import { TravellingSalesmanInput } from './travellingSalesmanInput';
 
@@ -37,7 +37,7 @@ export class TravellingSalesman extends Component{
 
     render(){
         return (
-            <div id="travelling-salesman" className="container">
+            <div id="travelling-salesman">
                 <TravellingSalesmanRender 
                     path ={this.state.path} 
                     distance ={this.state.distance} 

@@ -8,7 +8,7 @@ export class TravellingSalesmanInput extends Component{
         this.state = {
             numberOfNodes: 3,
             nodes: '',
-            matrix: []
+            matrix: new Array(3).fill(new Array(3).fill(0))
         }
 
         this.handleFieldChange  = this.handleFieldChange.bind(this);
@@ -18,7 +18,14 @@ export class TravellingSalesmanInput extends Component{
 
     handleFieldChange(e){
         let state = {};
-        state[e.target.name] = e.target.value;
+        const value = e.target.value;
+        state[e.target.name] = value;
+
+        /* update the matrix to new length */
+        if(e.target.name === 'numberOfNodes'){
+            let matrix = new Array(parseInt(value)).fill(new Array(parseInt(value)).fill(0))
+            state.matrix = matrix;
+        }
 
         this.setState(state);
     }
@@ -31,8 +38,8 @@ export class TravellingSalesmanInput extends Component{
     handleMatrixChange(e){
         const dataSet = e.target.dataset;
         let newMatrix = this.state.matrix;
-        newMatrix[dataSet.row] = [];
-        newMatrix[dataSet.row][dataSet.cell] = parseInt(e.target.value);
+
+        newMatrix[dataSet.row][dataSet.cell] = isNaN(parseInt(e.target.value)) ? '' : parseInt(e.target.value);
         this.setState({matrix: newMatrix});
     }
 
@@ -53,6 +60,7 @@ export class TravellingSalesmanInput extends Component{
                     row = {i}
                     rows = {this.state.numberOfNodes}
                     handleMatrixChange = {this.handleMatrixChange}
+                    currentMatrix = {this.state.matrix}
                 />
             );
         }

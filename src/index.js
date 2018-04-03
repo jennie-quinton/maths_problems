@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {TravellingSalesman} from './components/travellingSalesman';
-import {Header, Footer} from './components/core/index';
+import {TodaysPuzzle} from './components/todaysPuzzle';
+import {Header} from './components/core/index';
+import {HomePage} from './components/homePage';
 import './index.css';
  
 class Body extends Component{
@@ -9,8 +10,8 @@ class Body extends Component{
         return (
             <div id="page">
                 <Header />
-                <TravellingSalesman />
-                <Footer />
+                <HomePage />
+                <TodaysPuzzle />
             </div>
         );
     }

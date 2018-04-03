@@ -1,13 +1,10 @@
 @import './utils/_variables.scss';
 @import './core/header.scss';
 @import './core/footer.scss';
+@import './core/general.scss';
 
 body{
     width:100%;
     margin:0;
     margin-bottom:50px;
-}
-
-.container{
-    padding: 0 20px;
 }
