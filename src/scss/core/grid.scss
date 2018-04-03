@@ -1,0 +1,16 @@
+.grid {
+    display: flex;
+    flex: 0 1 auto;
+
+    &__column--4{
+        flex-basis: 33%
+    }
+
+    &__column--6{
+        flex-basis: 50%
+    }
+
+    &__column--8{
+        flex-basis: 66%
+    }
+}

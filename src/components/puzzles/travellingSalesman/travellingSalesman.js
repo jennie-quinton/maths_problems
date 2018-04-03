@@ -22,26 +22,21 @@ export class TravellingSalesman extends Component{
         }
 
         this.state = shortestPath(nodes, startMatrix);
-        this.onFormSubmit = this.onFormSubmit.bind(this);
-    }
-
-    onFormSubmit(nodes, matrix) { 
-        const matrixFunction = () => {
-            return matrix;
-        };
-        const nodesArray = nodes.split(",");
-        const result = shortestPath(nodesArray, matrixFunction);
-
-        this.setState(result);
     }
 
     render(){
         return (
-            <div id="travelling-salesman">
-                <TravellingSalesmanRender 
-                    path ={this.state.path} 
-                    distance ={this.state.distance} 
-                />
+            <div className="grid">
+                <div className="grid__column--6 container">
+                    <h3>Travelling Salesman Problem.</h3>
+                    <p>Finding the shortest path visting every node only once. (Not needing to return to the original node).</p>
+                    <img src="http://www.scielo.org.za/img/revistas/sajems/v16n1/05f08.jpg" alt="problem to solve"/>
+                    
+                    <TravellingSalesmanRender 
+                        path ={this.state.path} 
+                        distance ={this.state.distance} 
+                    />
+                </div>
                 <TravellingSalesmanInput 
                     handleFormSubmit={this.onFormSubmit}
                 />

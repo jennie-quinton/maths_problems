@@ -10,8 +10,10 @@ class Body extends Component{
         return (
             <div id="page">
                 <Header />
-                <HomePage />
-                <TodaysPuzzle />
+                <div id="content">
+                    <HomePage />
+                    <TodaysPuzzle />
+                </div>
             </div>
         );
     }

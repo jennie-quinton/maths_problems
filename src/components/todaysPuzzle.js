@@ -4,9 +4,11 @@ import {TravellingSalesman} from "./puzzles/travellingSalesman/travellingSalesma
 export class TodaysPuzzle extends Component{
     render(){
         return (
-            <div className="container">
-                <h2>Todays Puzzle</h2>
-                <TravellingSalesman />
+            <div>
+                <div className="container">
+                    <h2>Todays Puzzle</h2>
+                    <TravellingSalesman />
+                </div>
             </div>
         );
     }

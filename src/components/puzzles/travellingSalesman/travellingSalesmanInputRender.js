@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 export class TravellingSalesmanInputRender extends Component{
     render(){
         return (
-            <div id="travelling-salesman-input" className="container">
-                <h2>Solve your own</h2>
+            <div>
+                <h3>Solve your own</h3>
                 <p>Enter you problem</p>
                 <form id="travelling-salesman-input-form" onSubmit={this.props.handleFormSubmit}>
                     <div>

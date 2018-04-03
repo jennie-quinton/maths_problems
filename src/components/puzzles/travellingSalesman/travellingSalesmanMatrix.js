@@ -28,7 +28,7 @@ class TravellingSalesmanMatrixCell extends Component{
     render(){
         return (
             <td>
-                <input 
+                <input className = "matrix__input"
                     type = "text" 
                     data-cell = {this.props.cell} 
                     data-row = {this.props.row}

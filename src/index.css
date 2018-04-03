@@ -26,7 +26,8 @@
   color: #000; }
 
 .container {
-  padding: 0 20px; }
+  padding-left: 20px;
+  padding-right: 20px; }
   .container--split {
     width: 50%;
     display: inline-block; }
@@ -35,6 +36,19 @@
 
 .background--grey {
   background-color: #d9d9d9; }
+
+.grid {
+  display: flex;
+  flex: 0 1 auto; }
+  .grid__column--4 {
+    flex-basis: 33%; }
+  .grid__column--6 {
+    flex-basis: 50%; }
+  .grid__column--8 {
+    flex-basis: 66%; }
+
+.matrix__input {
+  width: 20px; }
 
 body {
   width: 100%;

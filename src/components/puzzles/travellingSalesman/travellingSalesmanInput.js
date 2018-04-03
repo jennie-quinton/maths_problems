@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { TravellingSalesmanInputRender } from './travellingSalesmanInputRender';
 import { TravellingSalesmanMatrix } from './travellingSalesmanMatrix';
+import { TravellingSalesmanRender } from './travellingSalesmanRender';
+import { shortestPath } from '../../../helpers/travelling-salesman';
 
 export class TravellingSalesmanInput extends Component{
     constructor(props){
@@ -8,7 +10,9 @@ export class TravellingSalesmanInput extends Component{
         this.state = {
             numberOfNodes: 3,
             nodes: '',
-            matrix: new Array(3).fill(new Array(3).fill(0))
+            matrix: this.createZeroMatrix(3),
+            path: '',
+            distance: ''
         }
 
         this.handleFieldChange  = this.handleFieldChange.bind(this);
@@ -23,16 +27,33 @@ export class TravellingSalesmanInput extends Component{
 
         /* update the matrix to new length */
         if(e.target.name === 'numberOfNodes'){
-            let matrix = new Array(parseInt(value)).fill(new Array(parseInt(value)).fill(0))
-            state.matrix = matrix;
+            state.matrix = this.createZeroMatrix(parseInt(value));
         }
 
         this.setState(state);
     }
 
+    createZeroMatrix(rows){
+        let matrix = [];
+
+        for( let i=0; i< rows; i++){
+            let row = Array(rows).fill(0);
+            matrix.push(row);
+        }
+
+        return matrix
+    }
+
     handleFormSubmit(e){
         e.preventDefault();
-        this.props.handleFormSubmit(this.state.nodes,this.state.matrix)
+
+        const matrixFunction = () => {
+            return this.state.matrix.slice();
+        };
+        const nodesArray = this.state.nodes.split(",");
+        const result = shortestPath(nodesArray, matrixFunction);
+
+        this.setState(result);
     }
 
     handleMatrixChange(e){
@@ -66,12 +87,18 @@ export class TravellingSalesmanInput extends Component{
         }
 
         return (
-            <TravellingSalesmanInputRender
-                handleFormSubmit = {this.handleFormSubmit}
-                handleFieldChange = {this.handleFieldChange}
-                selectOptions = {selectOptions}
-                matrixTable = {matrixTable}
-            />
+            <div className="grid__column--6 container">
+                <TravellingSalesmanInputRender
+                    handleFormSubmit = {this.handleFormSubmit}
+                    handleFieldChange = {this.handleFieldChange}
+                    selectOptions = {selectOptions}
+                    matrixTable = {matrixTable}
+                />
+                <TravellingSalesmanRender 
+                    path ={this.state.path} 
+                    distance ={this.state.distance} 
+                />
+            </div>
         )
     }
 }
