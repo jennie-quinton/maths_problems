@@ -33,7 +33,7 @@ class TravellingSalesman
             row[nodeIndex] = 0
         end
 
-        @order.push(node)
+        @order << node
         @distance += distance
     end
 
@@ -103,12 +103,7 @@ class TravellingSalesman
     # create immutable start matrix
     private
     def createStartMatrix
-        matrix = []
-        for row in @startMatrix
-            matrix.push(row.dup)
-        end
-
-        return matrix
+        @startMatrix.map{|row| row.dup}
     end
 
 end
