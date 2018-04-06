@@ -47,11 +47,8 @@ export class TravellingSalesmanInput extends Component{
     handleFormSubmit(e){
         e.preventDefault();
 
-        const matrixFunction = () => {
-            return this.state.matrix.slice();
-        };
         const nodesArray = this.state.nodes.split(",");
-        const result = shortestPath(nodesArray, matrixFunction);
+        const result = shortestPath(nodesArray, this.state.matrix);
 
         this.setState(result);
     }

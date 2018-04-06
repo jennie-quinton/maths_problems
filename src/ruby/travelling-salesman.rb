@@ -1,11 +1,11 @@
 class TravellingSalesman 
     def initialize(nodes, startMatrix)
         @nodes = nodes
-        @startMatrix = startMatrix.dup
+        @startMatrix = startMatrix
         @shortestPath = []
         @shortestDistance
         @order = []
-        @matrix = startMatrix.dup
+        @matrix = createStartMatrix
         @distance = 0
     end
 
@@ -75,7 +75,7 @@ class TravellingSalesman
     # go back to previous node to go down other paths from that node
     private
     def goBackNode(distance, node)
-        original  = @startMatrix.dup
+        original  = createStartMatrix
         nodeIndex = @nodes.index(node)
 
         i=0
@@ -98,6 +98,19 @@ class TravellingSalesman
             @shortestDistance = @distance.dup
         end
     end
+
+    ##
+    # create immutable start matrix
+    private
+    def createStartMatrix
+        matrix = []
+        for row in @startMatrix
+            matrix.push(row.dup)
+        end
+
+        return matrix
+    end
+
 end
 
 # change to matrix

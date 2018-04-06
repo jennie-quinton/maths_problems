@@ -26,7 +26,7 @@ function noOptionsAvailable(row){
 export function shortestPath(nodes, startMatrix){
     let shortestPath = [],
         shortestDistance,
-        matrix   = [...startMatrix],
+        matrix   = createStartMatrix(),
         order    = [],
         distance = 0;
 
@@ -67,7 +67,7 @@ export function shortestPath(nodes, startMatrix){
         /* return to previous node to try different paths */
         function goBackNode(option, index) {
             /* add back last row to matrix */
-            var orig = [...startMatrix];
+            var orig = createStartMatrix();
             for(let i=0; i<orig.length ; i++){
                 matrix[i][index] = orig[i][index];
             }
@@ -86,6 +86,19 @@ export function shortestPath(nodes, startMatrix){
         }
 
     });
+
+    /**
+     * make start matrix immutable
+     */
+    function createStartMatrix(){
+        let matrix = [];
+    
+        startMatrix.forEach((row)=>{
+            matrix.push([...row]);
+        });
+    
+        return matrix;
+    }
 
     return {path : shortestPath.join(', '), distance : shortestDistance};
 }
