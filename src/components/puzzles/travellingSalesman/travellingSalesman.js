@@ -29,7 +29,7 @@ export class TravellingSalesman extends Component{
             <div className="grid">
                 <div className="grid__column--6 container">
                     <h3>Travelling Salesman Problem.</h3>
-                    <p>Finding the shortest path visting every node only once. (Not needing to return to the original node).</p>
+                    <p>Finding the shortest path visiting every node only once. (Not needing to return to the original node).</p>
                     <img src="http://www.scielo.org.za/img/revistas/sajems/v16n1/05f08.jpg" alt="problem to solve"/>
                     
                     <TravellingSalesmanRender 
