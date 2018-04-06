@@ -3,6 +3,7 @@ After doing my masters in Maths, then becoming a web developer, I wanted to comb
 
 ## Running the site
 I have used node packages to create my site, and use react and sass.
+
 To start the site :
 ```npm run start```
 
