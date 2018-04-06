@@ -27,6 +27,7 @@ export class TravellingSalesmanInput extends Component{
 
         /* update the matrix to new length */
         if(e.target.name === 'numberOfNodes'){
+            // eslint-disable-next-line
             state.matrix = this.createZeroMatrix(parseInt(value));
         }
 
@@ -57,6 +58,7 @@ export class TravellingSalesmanInput extends Component{
         const dataSet = e.target.dataset;
         let newMatrix = this.state.matrix;
 
+        // eslint-disable-next-line
         newMatrix[dataSet.row][dataSet.cell] = isNaN(parseInt(e.target.value)) ? '' : parseInt(e.target.value);
         this.setState({matrix: newMatrix});
     }
