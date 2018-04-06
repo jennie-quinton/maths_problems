@@ -20,20 +20,21 @@ function noOptionsAvailable(row){
  * For given array of nodes and function creating matrix of variables, it displays the shortest path
  * 
  * @param {array} nodes 
- * @param {function} startMatrix 
+ * @param {array} startMatrix 
  * @returns {array}
  */
 export function shortestPath(nodes, startMatrix){
+    const test = [...startMatrix];
     let shortestPath = [],
         shortestDistance,
-        matrix   = startMatrix(),
+        matrix   = [...startMatrix],
         order    = [],
         distance = 0;
 
     nodes.forEach((node, index)=>{
         /* initial distance is 0 as we haven't gone anywhere yet */
         addOption(0, index);
-        addNextNode(0, index);
+        // addNextNode(0, index);
 
         /* add the next node to the list */
         function addNextNode(option, index){
@@ -47,7 +48,7 @@ export function shortestPath(nodes, startMatrix){
                 matrix[index].forEach((option, index)=>{
                     if (option !== 0){
                         addOption(option, index);
-                        addNextNode(option, index);
+                        // addNextNode(option, index);
                     } 
                 });
                 /* when cycle finished for node, go back to the previous node */
@@ -58,14 +59,17 @@ export function shortestPath(nodes, startMatrix){
         /* add to current path and distance */
         function addOption(option, index) {
             matrix.forEach(row => row[index] = 0);
+            console.log(test);
             order.push(nodes[index]);
             distance += option;
+
+            addNextNode(option, index)
         }
 
         /* return to previous node to try different paths */
         function goBackNode(option, index) {
             /* add back last row to matrix */
-            var orig = startMatrix();
+            var orig = [...startMatrix];
             for(let i=0; i<orig.length ; i++){
                 matrix[i][index] = orig[i][index];
             }
