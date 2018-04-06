@@ -9,6 +9,9 @@ class TravellingSalesman
         @distance = 0
     end
 
+    ##
+    # shortest path function
+    # need to fix matrix override
     public
     def shortestPath 
         for node in @nodes
@@ -22,6 +25,7 @@ class TravellingSalesman
         }
     end
 
+    # add option to current order and distance
     private
     def addOption(distance, node)
         nodeIndex = @nodes.index(node)
@@ -33,6 +37,7 @@ class TravellingSalesman
         @distance += distance
     end
 
+    # goes to next node to add to route
     private
     def addNextNode(distance, node)
         nodeIndex = @nodes.index(node)
@@ -54,6 +59,7 @@ class TravellingSalesman
         end
     end
 
+    # check to see if at a dead end
     private
     def noOptionsAvailable(row)
         deadEnd = true
@@ -66,6 +72,7 @@ class TravellingSalesman
         return deadEnd
     end
 
+    # go back to previous node to go down other paths from that node
     private
     def goBackNode(distance, node)
         original  = @startMatrix.dup
@@ -80,7 +87,10 @@ class TravellingSalesman
         @order -= [node]
         @distance -= distance
     end
-
+    
+    ##
+    # if the current order is valid and the distance is shorter
+    # update the shortest path and distance
     private
     def updateShortest
         if (@order.length == @startMatrix.length && (@shortestDistance.nil? || @distance < @shortestDistance ))
@@ -90,6 +100,7 @@ class TravellingSalesman
     end
 end
 
+# change to matrix
 startMatrix = [
         [0,  3,  2,  5,  0,  0,  0,  0],
         [3,  0,  3,  0,  3,  0,  0,  0],

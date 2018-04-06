@@ -24,7 +24,6 @@ function noOptionsAvailable(row){
  * @returns {array}
  */
 export function shortestPath(nodes, startMatrix){
-    const test = [...startMatrix];
     let shortestPath = [],
         shortestDistance,
         matrix   = [...startMatrix],
@@ -59,7 +58,6 @@ export function shortestPath(nodes, startMatrix){
         /* add to current path and distance */
         function addOption(option, index) {
             matrix.forEach(row => row[index] = 0);
-            console.log(test);
             order.push(nodes[index]);
             distance += option;
 
