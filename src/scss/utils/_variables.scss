@@ -1,6 +1,8 @@
-$primary: #7546d2;
-$primary--light: #c2adeb;
-$primary--dark: #3d1e7b;
+$primary:#c2adeb;
+$primary-dark: darken($primary,10%);
+$primary-dark-20: darken($primary,20%);
+$primary-dark-50: darken($primary,50%);
+
 
 $dark:#333333;
 $grey:#d9d9d9;

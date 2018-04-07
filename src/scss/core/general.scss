@@ -1,6 +1,18 @@
+body{
+    font-family:sans-serif;
+    width:100%;
+    margin:0;
+    margin-bottom:50px;
+    background: $grey;
+}
+
+.content{
+    width:80%;
+    margin: 10px auto;
+}
+
 .container{
-    padding-left:20px;
-    padding-right:20px;
+    padding:10px 20px;
 
     &--split{
         width:50%;
@@ -13,7 +25,16 @@
 }
 
 .background{
-    &--grey{
-    background-color: $grey; 
+    margin:20px;
+
+    &--white{
+        background-color: #fff;
     }
+    &--grey{
+        background-color: $grey; 
+    }
+}
+
+.image{
+    width:80%;
 }

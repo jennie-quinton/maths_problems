@@ -86,7 +86,7 @@ export class TravellingSalesmanInput extends Component{
         }
 
         return (
-            <div className="grid__column--6 container">
+            <div className="book__page book__page--right container">
                 <TravellingSalesmanInputRender
                     handleFormSubmit = {this.handleFormSubmit}
                     handleFieldChange = {this.handleFieldChange}

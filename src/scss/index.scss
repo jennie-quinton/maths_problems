@@ -1,12 +1,7 @@
-@import './utils/_variables.scss';
-@import './core/header.scss';
-@import './core/footer.scss';
-@import './core/general.scss';
-@import './core/grid.scss';
+@import './utils/_variables';
+@import './utils/_mixins';
+@import './core/header';
+@import './core/general';
+@import './core/grid';
 @import './components/travellingSalesman';
-
-body{
-    width:100%;
-    margin:0;
-    margin-bottom:50px;
-}
+@import './components/puzzle';

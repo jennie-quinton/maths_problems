@@ -25,11 +25,11 @@ export class TravellingSalesman extends Component{
 
     render(){
         return (
-            <div className="grid">
-                <div className="grid__column--6 container">
+            <div className="book">
+                <div className="book__page book__page--left container">
                     <h3>Travelling Salesman Problem.</h3>
                     <p>Finding the shortest path visiting every node only once. (Not needing to return to the original node).</p>
-                    <img src="http://www.scielo.org.za/img/revistas/sajems/v16n1/05f08.jpg" alt="problem to solve"/>
+                    <img className="image" src="http://www.scielo.org.za/img/revistas/sajems/v16n1/05f08.jpg" alt="problem to solve"/>
                     
                     <TravellingSalesmanRender 
                         path ={this.state.path} 

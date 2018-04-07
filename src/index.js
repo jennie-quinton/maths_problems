@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import {TodaysPuzzle} from './components/todaysPuzzle';
-import {Header} from './components/core/index';
+import {TodaysPuzzle} from './components/puzzles/todaysPuzzle';
+import {Header} from './components/core/header';
 import {HomePage} from './components/homePage';
 import './index.css';
  
 class Body extends Component{
     render(){
         return (
-            <div id="page">
+            <div className="page">
                 <Header />
-                <div id="content">
+                <div className="content">
                     <HomePage />
                     <TodaysPuzzle />
                 </div>
