@@ -55,9 +55,9 @@ class TravellingSalesman
     end
 
     # go back to previous node to go down other paths from that node
-    def goBackNode(distance, nodeIndex)
+    def goBackNode(distance, index)
         original  = createStartMatrix
-        original.length.times {|i| @matrix[i][nodeIndex] = original[i][nodeIndex]}
+        original.length.times {|i| @matrix[i][index] = original[i][index]}
 
         @order.pop
         @distance -= distance
