@@ -1,9 +1,7 @@
 .navigation{
-    margin: 0;
+    @include fullWidth($dark);
     list-style-type: none;
-    padding: 0;
     overflow: hidden;
-    background:$dark;
 
     &__item{
         float: left;
@@ -18,7 +16,7 @@
 
         &--main{
             color:#000;
-            background-color: $primary;
+            background-color: $primary-dark;
             font-weight: bold;
         }
     }

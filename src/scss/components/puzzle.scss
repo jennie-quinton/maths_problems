@@ -2,17 +2,18 @@
     background:linear-gradient(to right, $primary-dark 45%, $primary-dark-20 49%, $primary-dark-50 50%, $primary-dark-20 51%, $primary-dark 55%);
     @include initialFlex();
     padding: 10px;
+    box-shadow: 5px 5px 16px 0 rgba(0,0,0,0.2), -5px 5px 16px 0 rgba(0,0,0,0.2);
 
     &__page{
         flex-basis: 50%;
         background: #fff;
 
         &--left{
-            box-shadow: -5px 5px 16px 0 rgba(0,0,0,0.2), -6px 6px 20px 0 rgba(0,0,0,0.19) ;
+            box-shadow: -2px 1px $grey, -5px 5px 16px 0 rgba(0,0,0,0.25), -6px 6px 20px 0 rgba(0,0,0,0.5) ;
         }
 
         &--right{
-            box-shadow: 5px 5px 16px 0 rgba(0,0,0,0.2), 6px 6px 20px 0 rgba(0,0,0,0.19) ;
+            box-shadow: 2px 1px $grey, 5px 5px 16px 0 rgba(0,0,0,0.25), 6px 6px 20px 0 rgba(0,0,0,0.5) ;
             background: linear-gradient(to right,  #d9d9d9 0%,#f9f9f9 3%,#ffffff 8%,#ffffff 100%);
         }
     }

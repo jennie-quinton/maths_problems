@@ -2,3 +2,18 @@
     display: flex;
     flex: 0 1 auto;
 }
+
+@mixin content($margin: 10px){
+    width:80%;
+    margin: $margin auto;
+
+    @media (min-width:1000px){
+        width:70%;
+    }
+}
+
+@mixin fullWidth($color: #fff){
+    padding: 0;
+    margin: 0 ;
+    background-color: $color;
+}

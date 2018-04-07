@@ -7,8 +7,7 @@ body{
 }
 
 .content{
-    width:80%;
-    margin: 10px auto;
+    @include content();
 }
 
 .container{
@@ -32,6 +31,16 @@ body{
     }
     &--grey{
         background-color: $grey; 
+    }
+}
+
+.hero{
+    @include fullWidth($dark);
+    display: inline-block;
+    color: $primary;
+
+    &__content{
+        @include content(50px);
     }
 }
 
