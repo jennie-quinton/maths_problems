@@ -1,30 +1,30 @@
 import React from 'react';
 
-export default function TravellingSalesmanInputRender(){
+export default function TravellingSalesmanInputRender(props){
     return (
         <div>
             <h3>Solve your own</h3>
             <p>Enter you problem</p>
-            <form id="travelling-salesman-input-form" onSubmit={this.props.handleFormSubmit}>
+            <form id="travelling-salesman-input-form" onSubmit={props.handleFormSubmit}>
                 <div>
                     <label htmlFor="numberOfNodes">
                         Number of Nodes:
                     </label>
-                    <select name="numberOfNodes" onChange={this.props.handleFieldChange}>
-                        {this.props.selectOptions}
+                    <select name="numberOfNodes" onChange={props.handleFieldChange}>
+                        {props.selectOptions}
                     </select>
                 </div>
                 <div>
                     <label htmlFor="nodes">
                         Nodes List (seperated by a comma):
                     </label>
-                    <input name="nodes" type="text" onChange={this.props.handleFieldChange}/>
+                    <input name="nodes" type="text" onChange={props.handleFieldChange}/>
                 </div>
                 <div>
                     <label htmlFor="matrix">Matrix notation of paths</label>
                     <table name="matrix">
                         <tbody>
-                            {this.props.matrixTable}
+                            {props.matrixTable}
                         </tbody>
                     </table>
                 </div>

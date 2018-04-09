@@ -24,16 +24,16 @@ export default class TravellingSalesmanMatrix extends Component{
     }
 }
 
-function TravellingSalesmanMatrixCell(){
+function TravellingSalesmanMatrixCell(props){
     return (
         <td>
             <input className = "matrix__input"
                 type = "text"
-                data-cell = {this.props.cell}
-                data-row = {this.props.row}
-                onChange = {this.props.handleMatrixChange}
-                value = {this.props.currentRow[this.props.cell]}
-                disabled = {this.props.cell === this.props.row}
+                data-cell = {props.cell}
+                data-row = {props.row}
+                onChange = {props.handleMatrixChange}
+                value = {props.currentRow[props.cell]}
+                disabled = {props.cell === props.row}
             />
         </td>
     )
