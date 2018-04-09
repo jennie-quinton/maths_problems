@@ -14,13 +14,9 @@ export class TravellingSalesmanInput extends Component{
             path: '',
             distance: ''
         }
-
-        this.handleFieldChange  = this.handleFieldChange.bind(this);
-        this.handleFormSubmit   = this.handleFormSubmit.bind(this);
-        this.handleMatrixChange = this.handleMatrixChange.bind(this);
     }
 
-    handleFieldChange(e){
+    handleFieldChange = (e) => {
         let state = {};
         const value = e.target.value;
         state[e.target.name] = value;
@@ -45,7 +41,7 @@ export class TravellingSalesmanInput extends Component{
         return matrix
     }
 
-    handleFormSubmit(e){
+    handleFormSubmit = (e) => {
         e.preventDefault();
 
         const nodesArray = this.state.nodes.split(",");
@@ -54,7 +50,7 @@ export class TravellingSalesmanInput extends Component{
         this.setState(result);
     }
 
-    handleMatrixChange(e){
+    handleMatrixChange = (e) => {
         const dataSet = e.target.dataset;
         let newMatrix = this.state.matrix;
 
