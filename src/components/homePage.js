@@ -1,7 +1,7 @@
 import React from 'react';
-import {TodaysPuzzle} from './puzzles/todaysPuzzle';
+import TodaysPuzzle from './puzzles/todaysPuzzle';
 
-export function HomePage(){
+export default function HomePage(){
     return (
         <div>
             <div className="hero">
