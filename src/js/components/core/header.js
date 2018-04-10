@@ -7,6 +7,9 @@ export default function Header(){
                 <li className="navigation__item">
                     <a className="navigation__button navigation__button--main" href="/">Home</a>
                 </li>
+                <li className="navigation__item">
+                    <a className="navigation__button" href="/puzzles">Puzzles</a>
+                </li>
             </ul>
         </div>
     );

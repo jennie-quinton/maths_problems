@@ -23,7 +23,7 @@ function noOptionsAvailable(row){
  * @param {array} startMatrix 
  * @returns {array}
  */
-export function shortestPath(nodes, startMatrix){
+export default function shortestPath(nodes, startMatrix){
     let shortestPath = [],
         shortestDistance,
         matrix   = createStartMatrix(),

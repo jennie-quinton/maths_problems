@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './components/core/header';
-import HomePage from './components/homePage';
+import Header from './js/components/core/header';
+import HomePage from './js/components/homePage';
 import './index.css';
 
 function Body(){

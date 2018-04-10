@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import TravellingSalesmanInputRender from './travellingSalesmanInputRender';
 import TravellingSalesmanMatrix from './travellingSalesmanMatrix';
 import TravellingSalesmanRender from './travellingSalesmanRender';
-import { shortestPath } from '../../../helpers/travelling-salesman';
+import shortestPath from '../../../helpers/travelling-salesman';
 
 export default class TravellingSalesmanInput extends Component{
     constructor(props){

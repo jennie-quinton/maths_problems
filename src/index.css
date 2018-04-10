@@ -11,9 +11,9 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    color: #fff; }
+    color: #000;
+    background-color: #c2adeb; }
     .navigation__button--main {
-      color: #000;
       background-color: #a484e1;
       font-weight: bold; }
 

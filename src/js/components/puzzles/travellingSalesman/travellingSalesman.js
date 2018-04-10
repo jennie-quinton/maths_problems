@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { shortestPath } from '../../../helpers/travelling-salesman';
+import shortestPath from '../../../helpers/travelling-salesman';
 import TravellingSalesmanRender from './travellingSalesmanRender';
 import TravellingSalesmanInput from './travellingSalesmanInput';
 
