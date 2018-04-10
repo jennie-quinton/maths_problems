@@ -1,5 +1,5 @@
 import React from 'react';
-import TodaysPuzzle from './puzzles/todaysPuzzle';
+import TodaysPuzzle from '../components/puzzles/todaysPuzzle';
 
 export default function HomePage(){
     return (
@@ -15,9 +15,7 @@ export default function HomePage(){
                     </p>
                 </div>
             </div>
-            <div className="content">
-                <TodaysPuzzle />
-            </div>
+            <TodaysPuzzle />
         </div>
     );
 }

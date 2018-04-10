@@ -3,7 +3,7 @@ import TravellingSalesman from "./travellingSalesman/travellingSalesman";
 
 export default function TodaysPuzzle(){
     return (
-        <div>
+        <div className="content">
             <h2>Todays Puzzle</h2>
             <TravellingSalesman />
         </div>

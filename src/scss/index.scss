@@ -1,7 +1,15 @@
+// Utilities
 @import './utils/_variables';
 @import './utils/_mixins';
+
+// Core Css
 @import './core/header';
 @import './core/general';
 @import './core/grid';
-@import './components/travellingSalesman';
-@import './components/puzzle';
+@import './core/content';
+
+// Components
+@import './components/matrix';
+@import './components/book';
+@import './components/image';
+@import './components/hero';
