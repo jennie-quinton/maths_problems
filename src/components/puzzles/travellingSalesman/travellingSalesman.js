@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { shortestPath } from '../../../helpers/travelling-salesman';
-import { TravellingSalesmanRender } from './travellingSalesmanRender';
-import { TravellingSalesmanInput } from './travellingSalesmanInput';
+import TravellingSalesmanRender from './travellingSalesmanRender';
+import TravellingSalesmanInput from './travellingSalesmanInput';
 
-export class TravellingSalesman extends Component{
+export default class TravellingSalesman extends Component{
     constructor(props){
         super(props);
 
@@ -18,7 +18,7 @@ export class TravellingSalesman extends Component{
             [0,  0,  7,  0,  4,  0,  0,  2],
             [0,  0,  0,  0,  0,  1,  2,  0]
         ];
-    
+
 
         this.state = shortestPath(nodes, startMatrix);
     }
@@ -30,13 +30,13 @@ export class TravellingSalesman extends Component{
                     <h3>Travelling Salesman Problem.</h3>
                     <p>Finding the shortest path visiting every node only once. (Not needing to return to the original node).</p>
                     <img className="image" src="http://www.scielo.org.za/img/revistas/sajems/v16n1/05f08.jpg" alt="problem to solve"/>
-                    
-                    <TravellingSalesmanRender 
-                        path ={this.state.path} 
-                        distance ={this.state.distance} 
+
+                    <TravellingSalesmanRender
+                        path ={this.state.path}
+                        distance ={this.state.distance}
                     />
                 </div>
-                <TravellingSalesmanInput 
+                <TravellingSalesmanInput
                     handleFormSubmit={this.onFormSubmit}
                 />
             </div>

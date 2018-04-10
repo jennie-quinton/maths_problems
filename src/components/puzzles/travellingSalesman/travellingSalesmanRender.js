@@ -1,12 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export class TravellingSalesmanRender extends Component{
-    render(){
-        return (
-            <div >
-                <p><strong>Path</strong>: {this.props.path}</p>
-                <p><strong>Distance</strong>: {this.props.distance}</p>
-            </div>
-        );
-    }
+export default function TravellingSalesmanRender(props){
+    return (
+        <div >
+            <p><strong>Path</strong>: {props.path}</p>
+            <p><strong>Distance</strong>: {props.distance}</p>
+        </div>
+    );
 }

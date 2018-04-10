@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import { TravellingSalesmanInputRender } from './travellingSalesmanInputRender';
-import { TravellingSalesmanMatrix } from './travellingSalesmanMatrix';
-import { TravellingSalesmanRender } from './travellingSalesmanRender';
+import TravellingSalesmanInputRender from './travellingSalesmanInputRender';
+import TravellingSalesmanMatrix from './travellingSalesmanMatrix';
+import TravellingSalesmanRender from './travellingSalesmanRender';
 import { shortestPath } from '../../../helpers/travelling-salesman';
 
-export class TravellingSalesmanInput extends Component{
+export default class TravellingSalesmanInput extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -71,8 +71,8 @@ export class TravellingSalesmanInput extends Component{
 
         for(let i=0; i < this.state.numberOfNodes; i++){
             matrixTable.push(
-                <TravellingSalesmanMatrix 
-                    key = {`row ${i}`} 
+                <TravellingSalesmanMatrix
+                    key = {`row ${i}`}
                     row = {i}
                     rows = {this.state.numberOfNodes}
                     handleMatrixChange = {this.handleMatrixChange}
@@ -89,9 +89,9 @@ export class TravellingSalesmanInput extends Component{
                     selectOptions = {selectOptions}
                     matrixTable = {matrixTable}
                 />
-                <TravellingSalesmanRender 
-                    path ={this.state.path} 
-                    distance ={this.state.distance} 
+                <TravellingSalesmanRender
+                    path ={this.state.path}
+                    distance ={this.state.distance}
                 />
             </div>
         )
