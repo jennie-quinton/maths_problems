@@ -75,6 +75,15 @@ body {
 .matrix__input {
   width: 20px; }
 
+.matrix__header {
+  font-size: 10px; }
+  .matrix__header--lower-text {
+    vertical-align: sub;
+    font-size: 7px; }
+  .matrix__header--upper-text {
+    vertical-align: super;
+    font-size: 7px; }
+
 .book {
   background: linear-gradient(to right, #a484e1 45%, #855bd7 49%, #3e1e7b 50%, #855bd7 51%, #a484e1 55%);
   display: flex;

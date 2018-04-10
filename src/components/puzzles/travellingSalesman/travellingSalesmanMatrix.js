@@ -17,6 +17,7 @@ export default class TravellingSalesmanMatrix extends Component{
 
         return (
             <tr>
+                <th className="matrix__header"> {this.props.nodes[this.props.row]} </th>
                 {cells}
             </tr>
         );

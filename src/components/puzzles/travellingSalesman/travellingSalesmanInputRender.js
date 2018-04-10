@@ -21,8 +21,16 @@ export default function TravellingSalesmanInputRender(props){
                     <input name="nodes" type="text" onChange={props.handleFieldChange}/>
                 </div>
                 <div>
-                    <label htmlFor="matrix">Matrix notation of paths</label>
+                    <label htmlFor="matrix">Matrix notation of paths:</label>
                     <table name="matrix">
+                        <thead>
+                            <tr>
+                                <th className="matrix__header">
+                                    <span className="matrix__header--lower-text">From</span>
+                                    <span className="matrix__header--upper-text">To</span></th>
+                                {props.nodes.map((node, index)=> (<th className="matrix__header" key={index}>{node}</th>))}
+                            </tr>
+                        </thead> 
                         <tbody>
                             {props.matrixTable}
                         </tbody>

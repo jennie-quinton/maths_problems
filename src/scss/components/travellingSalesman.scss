@@ -2,4 +2,17 @@
     &__input{
         width:20px;
     }
+
+    &__header{
+        font-size: 10px;
+
+        &--lower-text{
+            @include scriptText(sub);
+        }
+
+        &--upper-text{
+            @include scriptText(super);
+        }
+    }
+
 }

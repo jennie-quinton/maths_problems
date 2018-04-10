@@ -17,3 +17,8 @@
     margin: 0 ;
     background-color: $color;
 }
+
+@mixin scriptText($type){
+    vertical-align:$type;
+    font-size:7px;
+}

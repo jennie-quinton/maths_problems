@@ -9,7 +9,7 @@ export default class TravellingSalesmanInput extends Component{
         super(props);
         this.state = {
             numberOfNodes: 3,
-            nodes: '',
+            nodes: [],
             matrix: this.createZeroMatrix(3),
             path: '',
             distance: ''
@@ -18,15 +18,17 @@ export default class TravellingSalesmanInput extends Component{
 
     handleFieldChange = (e) => {
         let state = {};
-        const value = e.target.value;
-        state[e.target.name] = value;
+        let value = e.target.value;
 
         /* update the matrix to new length */
         if(e.target.name === 'numberOfNodes'){
             // eslint-disable-next-line
             state.matrix = this.createZeroMatrix(parseInt(value));
+        } else if (e.target.name === 'nodes') {
+            value = value.split(",");
         }
 
+        state[e.target.name] = value;
         this.setState(state);
     }
 
@@ -77,6 +79,7 @@ export default class TravellingSalesmanInput extends Component{
                     rows = {this.state.numberOfNodes}
                     handleMatrixChange = {this.handleMatrixChange}
                     currentMatrix = {this.state.matrix}
+                    nodes = {this.state.nodes}
                 />
             );
         }
@@ -88,6 +91,7 @@ export default class TravellingSalesmanInput extends Component{
                     handleFieldChange = {this.handleFieldChange}
                     selectOptions = {selectOptions}
                     matrixTable = {matrixTable}
+                    nodes = {this.state.nodes}
                 />
                 <TravellingSalesmanRender
                     path ={this.state.path}
