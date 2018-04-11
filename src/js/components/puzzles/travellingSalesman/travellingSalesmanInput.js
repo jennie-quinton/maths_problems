@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TravellingSalesmanInputRender from './travellingSalesmanInputRender';
 import TravellingSalesmanMatrix from './travellingSalesmanMatrix';
-import TravellingSalesmanRender from './travellingSalesmanRender';
+import TravellingSalesmanSolutionRender from './travellingSalesmanSolutionRender';
 import shortestPath from '../../../helpers/travelling-salesman';
 
 export default class TravellingSalesmanInput extends Component{
@@ -45,10 +45,7 @@ export default class TravellingSalesmanInput extends Component{
 
     handleFormSubmit = (e) => {
         e.preventDefault();
-
-        const nodesArray = this.state.nodes.split(",");
-        const result = shortestPath(nodesArray, this.state.matrix);
-
+        const result = shortestPath(this.state.nodes, this.state.matrix);
         this.setState(result);
     }
 
@@ -93,7 +90,7 @@ export default class TravellingSalesmanInput extends Component{
                     matrixTable = {matrixTable}
                     nodes = {this.state.nodes}
                 />
-                <TravellingSalesmanRender
+                <TravellingSalesmanSolutionRender
                     path ={this.state.path}
                     distance ={this.state.distance}
                 />

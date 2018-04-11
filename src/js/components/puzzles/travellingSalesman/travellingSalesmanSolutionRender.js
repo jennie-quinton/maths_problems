@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function TravellingSalesmanRender(props){
+export default function TravellingSalesmanSolutionRender(props){
     return (
         <div >
             <p><strong>Path</strong>: {props.path}</p>
